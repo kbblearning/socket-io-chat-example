@@ -15,7 +15,15 @@
   </head>
   <script src="/socket.io/socket.io.js"></script>
   <script>
-    const socket = io();
+    (function () {
+    var socket = io();
+    document.querySelector('form').submit((e) => {
+      e.preventDefault(); // prevents page reloading
+      socket.emit('chat message', $('#m').val());
+      document.querySelector('#m').val('');
+      return false;
+    });
+  })();
   </script>
   <body>
     <ul id="messages"></ul>
