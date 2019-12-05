@@ -9,6 +9,7 @@
   "author": "Kenan Berker",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^6.7.2",
     "express": "^4.15.2"
   }
 }
